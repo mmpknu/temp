@@ -1,15 +1,7 @@
-#backend/post/serializers.py
+#backene/post/serializers.py
 from rest_framework import serializers
-from .models import Post
 from .models import Store
-class PostSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = (
-            'id',
-            'title',
-            'content',
-        )
-        model = Post
+from .models import Place
 
 
 class NearStoreSerializer(serializers.HyperlinkedModelSerializer):
@@ -27,3 +19,5 @@ class NearStoreSerializer(serializers.HyperlinkedModelSerializer):
             'IMAGE',
         )
         model = Store    
+
+
